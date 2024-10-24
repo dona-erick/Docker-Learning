@@ -1,0 +1,35 @@
+***** Installation de Docker sur votre machine Locale 'Système d'exploitation ' ******
+
+
+Je commence par mon système préférée 🤣️😁️
+
+J'adore Linux(UBUNTU ET KALI)
+
+Si vus utiliser un ssytème linux sous Debian ou kali , vous allez procéder à l'installation de docker CE. Pour voir comment installer Docker sur une autre distribution de linux, consulter la documentation
+https://docs.docker.com/ 
+
+"""" Sur UBUNTU """"
+
+1--- Mise à jour 
+
+sudo apt-get update
+sudo apt upgrade
+
+2--- Installer les préréquis
+
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 ware-properties-common
+
+3 --- Ajouter le repository de docker
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
+4-- vous pouvez maintenant installer 
+
+sudo apt update && sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+****** WIndows et Mac *******
+
+Vous pouvez installer en téléchargeant directement depuis la documentation 🖕️🖕️🖕️

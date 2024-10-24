@@ -1,0 +1,57 @@
+1 ... Decouvrez les conteneurs ...
+
+Historiquement, quand nous avions besoin de serveurs, nous achetions des serveurs physiques avec une quantité définie de CPU, de mémoire RAM ou de stockage sur le disque.
+
+Or, on avait souvent besoin d'avoir de la puissance supplémentaire pour des périodes de forte charge (fête de Noël, par exemple). Ainsi, vous deviez acheter plus de serveurs pour répondre aux pics d'utilisation. Une solution a alors été créée : la machine virtuelle. Alors la question qu'on se pose est qu'est ce qu'une machine virtuellee .?
+
+### Machine Virtual
+
+https://user.oc-static.com/upload/2021/10/26/16352592189881_1c2-1.png
+
+Lorsque vous utilisez une machine virtuelle (VM), vous faites ce qu'on appelle ** la virtualisation lourde **. En effet , vous créez un système complet dans le système hote pour qu'il ait ses propres ressources.
+
+L'isolation avec le système hote est donc total; cependant , cela apporte plusieurs contraintes comme:
+
+**** Une machine virtuelle prend du temps à démarrer;
+**** une machine virtuelle reserve les ressources (CPU/RAM) sur le sytème hote. mais il faut comprendre également qu'elle présente des avantages particuliers comme :
+//// la machine virtuelle est totalement isolée du dytème hote;
+//// les ressources  attribuées à une machien virtuelles lui sont totalement résevées et vous pouvez installer différents systèmes OS(Ubuntu, Linux, Mac etc...).
+
+Cependant, il arrive que l'application que la machine virtuelle fait tourner n'utilise pas l'ensemble des ressources disponibles sur le sytèmen hote. Donc , il naquit en ce moment un nouveau système de virtualisation lourde qui est : ***Les Conteneurs***.
+
+
+
+Alors c'est quoi un COnteneurs ?
+
+Un conteneurs c'est tout simplement une boite locale contenant plusieurs ressources et à chaque fois que j'aurai besoin d'un élément je vais consulter le conteneur pour prendre . ceci est une définition très simple , pour aller plus loin, on dira qu'on Conteneur est un processus ou un ensemble de processus isolés du reste du sytème tout en étant légers.
+
+Le conteneur permet de faire de la virtualisation légère, c'est-à-dire qu'il ne virtualise pas les ressources, il ne crée qu'une isolation des processus. Le conteneur partage donc les ressources avec le système hôte. https://user.oc-static.com/upload/2019/05/13/15577645779374_vm-vs-conteneur.png
+
+
+
+///// Voyons ensemble quelques avantages des conteneurs.
+
+*****Ne réservez que les ressources nécessaires
+Une autre différence importante avec les machines virtuelles est qu'un conteneur ne réserve pas la quantité de CPU, RAM et disque attribuée auprès du système hôte. Ainsi, nous pouvons allouer 16 Go de RAM à notre conteneur, mais si celui-ci n'utilise que 2 Go, le reste ne sera pas verrouillé.
+
+*****Démarrez rapidement vos conteneurs
+Les conteneurs n'ayant pas besoin d'une virtualisation des ressources mais seulement d'une isolation, ils peuvent démarrer beaucoup plus rapidement et plus fréquemment qu'une machine virtuelle sur nos serveurs hôtes, et ainsi réduire encore un peu les frais de l'infrastructure.
+
+***** Donnez plus d'autonomie à vos développeurs
+En dehors de la question pécuniaire, il y a aussi la possibilité de faire tourner des conteneurs sur le poste des développeurs, et ainsi de réduire les différences entre la "sainte" production, et l'environnement local sur le poste des développeurs.
+
+***** Pourquoi utiliser des conteneurs ? *****
+Les conteneurs permettent de réduire les coûts, d'augmenter la densité de l'infrastructure, tout en améliorant le cycle de déploiement.
+
+Nous retrouvons les conteneurs dans de nombreux contextes. Par exemple, les outils d'intégration continue (CI) de grandes sociétés utilisent des conteneurs. BlaBlaCar utilise des conteneurs pour créer et isoler rapidement des tests/builds d'application.
+
+Les conteneurs étant capables de démarrer très rapidement, ils sont souvent utilisés en production pour ajouter des ressources disponibles, et ainsi répondre à des besoins de mise à l'échelle ou de scalabilité. Mais ils répondent aussi à des besoins de préproduction ; en étant légers et rapides au démarrage, il permettent de créer des environnements dynamiques et ainsi de répondre à des besoins métier.
+
+Attention, bien que le fonctionnement des conteneurs et des machines virtuelles soient très proches, l'un ne remplace pas l'autre ! Pour faire tourner un conteneur, il faut toujours une machine (virtuelle ou non). Ce sont donc deux outils complémentaires à utiliser en connaissance de cause. 
+
+---------En résumé -----------
+Vous connaissez maintenant la différence entre conteneur et machine virtuelle ; vous avez ainsi pu voir les différences entre la virtualisation lourde et la virtualisation légère.
+
+Un conteneur doit être léger, il ne faut pas ajouter de contenu superflu dans celui-ci afin de le démarrer rapidement, mais il apporte une isolation moindre. À contrario, les machines virtuelles offrent une très bonne isolation, mais elle sont globalement plus lentes et bien plus lourdes.
+
+Dans le prochain chapitre, nous allons découvrir une solution de conteneur qui s'est imposée comme leader des technologies de conteneurisation, et que vous allez apprendre à utiliser dans ce cours : Docker !
